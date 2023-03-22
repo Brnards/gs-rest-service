@@ -34,6 +34,7 @@ public class GreetingControllerTests {
 	@Autowired
 	private MockMvc mockMvc;
 
+	//Este método é usado para testar uma API que retorna uma mensagem de saudação padrão ("Hello, World!") quando acessada sem parâmetros. Ele utiliza o framework MockMvc para simular uma requisição GET à rota "/greeting" e validar se o retorno é o esperado.
 	@Test
 	public void noParamGreetingShouldReturnDefaultMessage() throws Exception {
 
@@ -41,6 +42,7 @@ public class GreetingControllerTests {
 				.andExpect(jsonPath("$.content").value("Hello, World!"));
 	}
 
+	//Este método testa uma API que retorna uma saudação personalizada com base em um parâmetro de nome e verifica se a mensagem de saudação retornada é a esperada.
 	@Test
 	public void paramGreetingShouldReturnTailoredMessage() throws Exception {
 
